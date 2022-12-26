@@ -46,6 +46,7 @@ class _MyAppState extends State<MyApp> {
             FlashyTabBarItem(
               icon: Icon(Icons.event),
               title: Text('Events'),
+              badge: 2,
             ),
             FlashyTabBarItem(
               icon: Icon(Icons.search),
@@ -54,6 +55,7 @@ class _MyAppState extends State<MyApp> {
             FlashyTabBarItem(
               icon: Icon(Icons.highlight),
               title: Text('Highlights'),
+              badge: 5,
             ),
             FlashyTabBarItem(
               icon: Icon(Icons.settings),
