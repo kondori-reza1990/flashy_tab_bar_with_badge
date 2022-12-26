@@ -1,6 +1,6 @@
 name: flashy_tab_bar_with_badge
 description: One another animated tab bar with badge (Flutter Version) (inspired by https://github.com/Bilonik/flashy_tab_bar2)
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/kondori-reza1990/flashy_tab_bar_with_badge
 
 environment:

@@ -1,4 +1,4 @@
-import 'package:flashy_tab_bar_with_badge/flashy_tab_bar_with_badge';
+import 'package:flashy_tab_bar_with_badge/flashy_tab_bar_with_badge.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -60,10 +60,6 @@ class _MyAppState extends State<MyApp> {
             FlashyTabBarItem(
               icon: Icon(Icons.settings),
               title: Text('Settings'),
-            ),
-            FlashyTabBarItem(
-              icon: Icon(Icons.settings),
-              title: Text('한국어'),
             ),
           ],
         ),

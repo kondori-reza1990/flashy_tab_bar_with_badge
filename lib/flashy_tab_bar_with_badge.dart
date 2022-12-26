@@ -87,11 +87,15 @@ class FlashyTabBarWithBadge extends StatelessWidget {
   double iconSizeEffectCalculator(double size) => size > 30
       ? size * 1.2
       : size > 10
-      ? size * .6
-      : 0;
+          ? size * .6
+          : 0;
 }
 
-/// A single tab in the [FlashyTabBar]. A tab has a title and an icon. The title is displayed when the item is not selected. The icon is displayed when the item is selected. Tabs are always used in conjunction with a [FlashyTabBar].
+/// A single tab in the [FlashyTabBar].
+/// A tab has a title and an icon. The title is displayed when the item is not selected.
+/// The icon is displayed when the item is selected. Tabs are always used in conjunction with a [FlashyTabBar].
+/// We added the badge property in [FlashyTabBarItem] so that this library supports showing the badge on top of the icon.
+/// The badgeColor property set color of badge
 class FlashyTabBarItem {
   FlashyTabBarItem({
     required this.icon,
@@ -155,24 +159,24 @@ class _FlashTabBarItem extends StatelessWidget {
                             ? item.activeColor.withOpacity(1)
                             : item.inactiveColor),
                     child: Stack(
-                  children: <Widget>[
-                    item.icon,
-                    item.badge > 0
-                        ? Positioned(
-                            top: 5,
-                            left: 6,
-                            child: CircleAvatar(
-                              maxRadius: 7,
-                              backgroundColor: item.badgeColor,
-                              child: FittedBox(
-                                  child: Text('${item.badge}',
-                                      style:
-                                      TextStyle(color: Colors.white))),
-                            ),
-                          )
-                        : SizedBox()
-                  ],
-                ),
+                      children: <Widget>[
+                        item.icon,
+                        item.badge > 0
+                            ? Positioned(
+                                top: 5,
+                                left: 6,
+                                child: CircleAvatar(
+                                  maxRadius: 7,
+                                  backgroundColor: item.badgeColor,
+                                  child: FittedBox(
+                                      child: Text('${item.badge}',
+                                          style:
+                                              TextStyle(color: Colors.white))),
+                                ),
+                              )
+                            : SizedBox()
+                      ],
+                    ),
                   )),
               alignment: isSelected ? Alignment.topCenter : Alignment.center,
             ),
