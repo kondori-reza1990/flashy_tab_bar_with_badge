@@ -158,7 +158,7 @@ class _FlashTabBarItem extends StatelessWidget {
                         color: isSelected
                             ? item.activeColor.withOpacity(1)
                             : item.inactiveColor),
-                    child: Stack(
+                    child: item.icon, /*Stack(
                       children: <Widget>[
                         item.icon,
                         item.badge > 0
@@ -176,7 +176,7 @@ class _FlashTabBarItem extends StatelessWidget {
                               )
                             : SizedBox()
                       ],
-                    ),
+                    ),*/
                   )),
               alignment: isSelected ? Alignment.topCenter : Alignment.center,
             ),
@@ -225,7 +225,6 @@ class _FlashTabBarItem extends StatelessWidget {
                   ),
                   painter: _CustomPath(backgroundColor, iconSize),
                 )),
-
             /// This is the selected item indicator
             Align(
               alignment: Alignment.bottomCenter,
@@ -242,7 +241,21 @@ class _FlashTabBarItem extends StatelessWidget {
                       borderRadius: BorderRadius.circular(2.5),
                     ),
                   )),
+            ),
+            item.badge > 0
+                ? Positioned(
+              top: 5,
+              left: 6,
+              child: CircleAvatar(
+                maxRadius: 8,
+                backgroundColor: item.badgeColor,
+                child: FittedBox(
+                    child: Text('${item.badge}',
+                        style:
+                        TextStyle(color: Colors.white))),
+              ),
             )
+                : SizedBox(),
           ],
         ));
   }

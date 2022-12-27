@@ -35,10 +35,10 @@ class _MyAppState extends State<MyApp> {
           child: tabItems[_selectedIndex],
         ),
         bottomNavigationBar: FlashyTabBarWithBadge(
-          animationCurve: Curves.linear,
+          animationCurve: Curves.easeInCubic,
           selectedIndex: _selectedIndex,
-          iconSize: 30,
-          showElevation: false, // use this to remove appBar's elevation
+          //iconSize: 30,
+          showElevation: true, // use this to remove appBar's elevation
           onItemSelected: (index) => setState(() {
             _selectedIndex = index;
           }),
